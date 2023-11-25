@@ -1,11 +1,11 @@
-
+import Register from "./register";
+import './index.css'
 function App() {
-
   return (
     <>
-    <h1>teste</h1>
+      <Register />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
