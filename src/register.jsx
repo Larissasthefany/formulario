@@ -1,6 +1,6 @@
 import { Component } from "react"
 import './register.css'
-import Login from '../public/image/login.png'
+import Login from '../public/image/logiin.png'
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -46,9 +46,12 @@ class Register extends Component {
     render() {
         return (
             <div className="container-form">
+                <div>
+                    <img src={Login} alt="Imagem de login" />
+                </div>
                 {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.cadastrar}>
-                    <legend>Cadastre - se</legend>
+                <form onSubmit={this.cadastrar} className="form">
+                    <h1>Cadastre - se</h1>
 
                     <div className="input-group">
                         <input className="input" type="text" name="nome" value={this.state.form.nome}
@@ -73,15 +76,14 @@ class Register extends Component {
                         <label className="label">Senha</label>
                     </div>
 
-                    <input type="checkbox" name="aceitarTermo" id="aceitarTermo" checked={this.state.form.aceitarTermo} onChange={this.dadosForm} />
-                    <label htmlFor="aceitarTermo"> Eu aceito os Termos e condições de <span className="termo">Politica</span> de <span className="termo">privacidade</span>.</label>
-                    <br />
+                    <div className="input-group">
+                        <input type="checkbox" name="aceitarTermo" id="aceitarTermo" checked={this.state.form.aceitarTermo} onChange={this.dadosForm} />
 
+                        <label htmlFor="aceitarTermo"> Eu aceito os Termos e condições de <span className="termo">Politica</span> de <span className="termo">privacidade</span>.</label>
+                    </div>
+                    
                     <button type="submit" className="button-48"><span className="text">Cadastrar</span></button>
                 </form>
-                <div>
-                    <img src={Login} alt="Imagem de login" />
-                </div>
             </div>
         );
     }
